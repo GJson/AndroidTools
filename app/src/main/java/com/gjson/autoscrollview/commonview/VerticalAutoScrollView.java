@@ -107,6 +107,7 @@ public class VerticalAutoScrollView extends LinearLayout {
         if (position >= getChildCount()) {
             mHolder = new ViewHolder();
             View v = View.inflate(getContext(), R.layout.item_view, null);
+            mHolder.lin = (LinearLayout) v.findViewById(R.id.parent_view);
             mHolder.message_txt = (TextView) v.findViewById(R.id.txt_user_message);
             mHolder.usericon_img = (ImageView) v.findViewById(R.id.img_user_icon);
             v.setTag(mHolder);
@@ -116,6 +117,14 @@ public class VerticalAutoScrollView extends LinearLayout {
         }
         final AdInfo message = meaageList.get(position);
         mHolder.message_txt.setText(message.name);
+        mHolder.lin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (click != null) {
+                    click.onItemClick(v, message);
+                }
+            }
+        });
 //        String picurl = String.format(employeePhoto, message.url);
 //        ImageLoaderUtils.loadImage(picurl, mHolder.usericon_img, true);
 //        mHolder.message_txt.setOnClickListener(new OnClickListener() {
@@ -133,6 +142,7 @@ public class VerticalAutoScrollView extends LinearLayout {
     private class ViewHolder {
         TextView message_txt;
         ImageView usericon_img;
+        LinearLayout lin;
     }
 
     Handler mHandler = new Handler() {
