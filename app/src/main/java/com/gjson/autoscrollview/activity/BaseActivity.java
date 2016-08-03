@@ -1,8 +1,8 @@
 package com.gjson.autoscrollview.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
@@ -10,7 +10,7 @@ import android.view.View;
  * Name BaseActivity
  * Version 1.0
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
     protected Context mContext;
 
     @Override
