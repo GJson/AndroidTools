@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rain="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +13,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
+
+    <com.gjson.autoscrollview.commonview.rainview.RainView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff000000"
+        rain:rainNum="300"
+        rain:randColor="true"
+        rain:size="10" />
+
     <ImageView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/just_experience_one" />

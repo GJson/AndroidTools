@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -32,6 +33,8 @@ public class PayDetailFragment extends DialogFragment {
     private ListView lv;
     private Button btnPay;
     private EditText gridPasswordView;
+    private ImageView mPardetailCloseImg, mPayTypeCloseImg, mInputPdCloseImg;
+
 
     @NonNull
     @Override
@@ -57,6 +60,13 @@ public class PayDetailFragment extends DialogFragment {
         btnPay = (Button) dialog.findViewById(R.id.btn_confirm_pay);
         gridPasswordView = (EditText) dialog.findViewById(R.id.pass_view);
         linPass = (LinearLayout) dialog.findViewById(R.id.lin_pass);
+        mPardetailCloseImg = (ImageView) dialog.findViewById(R.id.pardetail_close_img);
+        mPayTypeCloseImg = (ImageView) dialog.findViewById(R.id.paytype_close_img);
+        mInputPdCloseImg = (ImageView) dialog.findViewById(R.id.inputpd_close_img);
+
+        mPardetailCloseImg.setOnClickListener(listener);
+        mPayTypeCloseImg.setOnClickListener(listener);
+        mInputPdCloseImg.setOnClickListener(listener);
         rePayWay.setOnClickListener(listener);
         reBalance.setOnClickListener(listener);
         btnPay.setOnClickListener(listener);
@@ -88,6 +98,11 @@ public class PayDetailFragment extends DialogFragment {
                     rePayDetail.setVisibility(View.GONE);
                     linPass.startAnimation(slide_right_to_left);
                     linPass.setVisibility(View.VISIBLE);
+                    break;
+                case R.id.pardetail_close_img:
+                case R.id.paytype_close_img:
+                case R.id.inputpd_close_img:
+                    dismissAllowingStateLoss();
                     break;
                 default:
                     break;

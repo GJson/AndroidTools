@@ -29,8 +29,9 @@
                     android:paddingTop="15dp">
 
                     <ImageView
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
+                        android:id="@+id/pardetail_close_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@mipmap/ic_close" />
 
                     <TextView
@@ -201,6 +202,7 @@
                 android:text="选择支付方式" />
 
             <ImageView
+                android:id="@+id/paytype_close_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -304,6 +306,7 @@
             android:paddingTop="15dp">
 
             <ImageView
+                android:id="@+id/inputpd_close_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_close" />
