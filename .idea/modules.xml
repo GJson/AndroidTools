@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VerticalAutoScrollView.iml" filepath="$PROJECT_DIR$/VerticalAutoScrollView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidTools.iml" filepath="$PROJECT_DIR$/AndroidTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

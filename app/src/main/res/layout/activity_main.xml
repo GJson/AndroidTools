@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context="com.gjson.androidtools.activity.MainActivity">
 
-    <com.gjson.autoscrollview.commonview.VerticalAutoScrollView
+    <com.gjson.androidtools.commonview.VerticalAutoScrollView
         android:id="@+id/top_autoscrllo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="@string/rxjava_retrofit" />
 
-    <com.gjson.autoscrollview.commonview.rainview.RainView
+    <com.gjson.androidtools.commonview.rainview.RainView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#ff000000"

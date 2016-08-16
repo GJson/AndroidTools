@@ -6,7 +6,7 @@
     android:paddingRight="16dp"
     android:paddingTop="20dp">
 
-    <com.gjson.autoscrollview.commonview.CouponView
+    <com.gjson.androidtools.commonview.CouponView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F79709"
@@ -55,6 +55,6 @@
                 android:text="截止日期:2001-09-07"
                 android:textSize="12dp" />
         </LinearLayout>
-    </com.gjson.autoscrollview.commonview.CouponView>
+    </com.gjson.androidtools.commonview.CouponView>
 
 </FrameLayout>

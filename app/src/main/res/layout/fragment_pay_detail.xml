@@ -224,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.gjson.autoscrollview.commonview.AutoListView
+                <com.gjson.androidtools.commonview.AutoListView
                     android:id="@+id/lv_bank"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
