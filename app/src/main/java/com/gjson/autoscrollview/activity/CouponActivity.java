@@ -20,10 +20,23 @@ public class CouponActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_coupon;
+    }
+
+    @Override
+    protected void setupView() {
         mCouponLv = getView(R.id.coupon_lv);
+    }
+
+    @Override
+    protected void initializedData() {
         mCouponLv.setAdapter(new CouponListAdapter(mContext));
         mCouponLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -33,11 +46,5 @@ public class CouponActivity extends BaseActivity {
                 payDetailFragment.show(getFragmentManager(), "payDetailFragment");
             }
         });
-
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_coupon;
     }
 }

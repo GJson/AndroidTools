@@ -13,6 +13,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
+    <Button
+        android:background="@android:color/holo_orange_light"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/rxretro_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rxjava_retrofit" />
 
     <com.gjson.autoscrollview.commonview.rainview.RainView
         android:layout_width="fill_parent"
@@ -22,9 +29,10 @@
         rain:randColor="true"
         rain:size="10" />
 
+
     <ImageView
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/just_experience_one" />
+        android:background="@mipmap/just_experience_one"
+        android:visibility="gone" />
 </LinearLayout>

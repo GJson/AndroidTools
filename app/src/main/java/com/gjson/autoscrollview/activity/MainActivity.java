@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 
 import com.gjson.autoscrollview.R;
 import com.gjson.autoscrollview.commonview.VerticalAutoScrollView;
 import com.gjson.autoscrollview.entity.AdInfo;
+import com.gjson.autoscrollview.rxjavaoretrofit.view.activities.WeatherActivity;
 import com.gjson.autoscrollview.utils.ToastManager;
 
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
 
     private VerticalAutoScrollView mAutoScrollView;
+    private Button mRxRetrofitBtn;
 
 
     // 退出时间
@@ -23,9 +26,26 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        super.onCreate(savedInstanceState);
+
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void setupView() {
+
         mAutoScrollView = getView(R.id.top_autoscrllo);
+        mRxRetrofitBtn = getView(R.id.rxretro_btn);
+    }
+
+    @Override
+    protected void initializedData() {
         mAutoScrollView.setData(getData());
         mAutoScrollView.setClickListener(new VerticalAutoScrollView.OnItemClickListener<AdInfo>() {
             @Override
@@ -34,12 +54,12 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(mContext, CouponActivity.class));
             }
         });
-
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
+        mRxRetrofitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, WeatherActivity.class));
+            }
+        });
     }
 
     /*获取数据*/
@@ -62,7 +82,7 @@ public class MainActivity extends BaseActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
             if ((System.currentTimeMillis() - exitTime) > 2000) {
-                ToastManager.showToast(mContext, "再按一次退出程序",1);
+                ToastManager.showToast(mContext, "再按一次退出程序", 1);
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();

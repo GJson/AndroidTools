@@ -17,6 +17,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        setupView();
+        initializedData();
 
     }
 
@@ -34,10 +36,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化组件
      */
-//    protected abstract void setupView();
+    protected abstract void setupView();
 
     /**
      * 初始化数据
      */
-//    protected abstract void initializedData();
+    protected abstract void initializedData();
 }
