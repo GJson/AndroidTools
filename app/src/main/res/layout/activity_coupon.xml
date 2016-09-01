@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#Ffffff"
@@ -14,4 +15,12 @@
         android:dividerHeight="0dp">
 
     </ListView>
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/cart_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/cart" />
+</RelativeLayout>

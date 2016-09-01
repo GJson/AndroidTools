@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,11 +20,13 @@ import com.gjson.androidtools.R;
 public class CouponListAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private Context mContext;
+    private AdapterView.OnItemClickListener mOnitemClicklis;
 
-    public CouponListAdapter(Context context) {
+    public CouponListAdapter(Context context, AdapterView.OnItemClickListener itemClickListener) {
 
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
+        this.mOnitemClicklis = itemClickListener;
     }
 
     @Override
@@ -42,23 +45,30 @@ public class CouponListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         final ViewHolder viewHolder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_couponview, null);
             viewHolder = new ViewHolder();
-            viewHolder.img=(ImageView)convertView.findViewById(R.id.horn_img) ;
+            viewHolder.img = (ImageView) convertView.findViewById(R.id.horn_img);
             convertView.setTag(viewHolder);
         } else {
 
             viewHolder = (ViewHolder) convertView.getTag();
 
         }
+//        viewHolder.img.setTag(viewHolder);
+        viewHolder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnitemClicklis.onItemClick(null, v, position, 0);
+            }
+        });
         return convertView;
     }
 
-    static class ViewHolder {
-        TextView tv;
-        ImageView img;
+    public static class ViewHolder {
+        public TextView tv;
+        public ImageView img;
     }
 }
