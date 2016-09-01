@@ -21,3 +21,6 @@ Pay attention to progress
 
 
 ![image](https://github.com/GJson/AndroidTools/blob/master/three.gif)    
+
+
+![image](https://github.com/GJson/AndroidTools/blob/master/four.gif)    
