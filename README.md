@@ -13,11 +13,11 @@ Pay attention to progress
 
 #  效果图
 
-         ![image](https://github.com/GJson/AndroidTools/blob/master/one.gif)    
+![image](https://github.com/GJson/AndroidTools/blob/master/one.gif)    
  
 
 
-         ![image](https://github.com/GJson/AndroidTools/blob/master/two.gif)    
+![image](https://github.com/GJson/AndroidTools/blob/master/two.gif)    
 
 
-         ![image](https://github.com/GJson/AndroidTools/blob/master/three.gif)    
+![image](https://github.com/GJson/AndroidTools/blob/master/three.gif)    
