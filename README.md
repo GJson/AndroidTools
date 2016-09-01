@@ -12,4 +12,4 @@ Pay attention to progress
 
 
 #  效果图
-* ![gif](http://gjson.com/images/one.gif)
+* ![image](https://github.com/GJson/AndroidTools/blob/master/one.gif)
