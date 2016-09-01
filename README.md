@@ -7,3 +7,5 @@ Pay attention to progress
 * 自定义的优惠券view；
 
 * RXJava Retrofit MVP实战；
+
+* 添加购物车动效；
