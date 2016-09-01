@@ -22,15 +22,22 @@ Pay attention to progress
 
 
 
-* 自定义的优惠券view；
+
+* 添加购物车动效;
 
 ![image](https://github.com/GJson/AndroidTools/blob/master/gif/four.gif) 
 
 
-* 添加购物车动效;
+
+
+
+* 自定义的优惠券view；
 
 ![image](https://github.com/GJson/AndroidTools/blob/master/gif/one.gif)    
  
+
+
+
 
 * RXJava Retrofit MVP实战
 
