@@ -47,6 +47,7 @@ public class CouponListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_couponview, null);
             viewHolder = new ViewHolder();
+            viewHolder.img=(ImageView)convertView.findViewById(R.id.horn_img) ;
             convertView.setTag(viewHolder);
         } else {
 
