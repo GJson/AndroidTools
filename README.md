@@ -4,7 +4,7 @@ Pay attention to progress
 
 * 上下自动滚动，实例如京东、淘宝、一号店等 Android app里的上下滚动动态；
 
-* 自定义的优惠券view；
+* 自定义的优惠券view、淘宝支付动效；
 
 * RXJava Retrofit MVP实战；
 
@@ -31,7 +31,7 @@ Pay attention to progress
 
 
 
-* 自定义的优惠券view；
+* 自定义的优惠券view，以及支付宝支付动效；
 
 ![image](https://github.com/GJson/AndroidTools/blob/master/gif/one.gif)    
  
