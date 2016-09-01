@@ -9,3 +9,7 @@ Pay attention to progress
 * RXJava Retrofit MVP实战；
 
 * 添加购物车动效；
+
+
+#  效果图
+* ![image](http://gjson.com/images/one.gif)
