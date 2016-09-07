@@ -19,6 +19,7 @@ public class MainActivity extends BaseActivity {
 
     private VerticalAutoScrollView mAutoScrollView;
     private Button mRxRetrofitBtn;
+    private Button mBezierBtn;
 
 
     // 退出时间
@@ -26,7 +27,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(getLayoutId());
         super.onCreate(savedInstanceState);
 
 
@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
 
         mAutoScrollView = getView(R.id.top_autoscrllo);
         mRxRetrofitBtn = getView(R.id.rxretro_btn);
+        mBezierBtn=getView(R.id.bezier_btn);
     }
 
     @Override
@@ -58,6 +59,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(mContext, WeatherActivity.class));
+            }
+        });
+
+        mBezierBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, BezierActivity.class));
+
             }
         });
     }
