@@ -10,6 +10,10 @@ Pay attention to progress
 
 * 添加购物车动效；
 
+* 使用三阶贝塞尔曲线模拟运动路径。一个模拟贝塞尔曲线的网站，可以在线模拟出想要的曲线 http://myst729.github.io/bezier-curve/
+
+ 
+
 
 
 #  效果图
@@ -41,7 +45,15 @@ Pay attention to progress
 
 * RXJava Retrofit MVP实战
 
-![image](https://github.com/GJson/AndroidTools/blob/master/gif/two.gif)    
+![image](https://github.com/GJson/AndroidTools/blob/master/gif/two.gif)   
+
+
+
+
+
+* 三阶贝塞尔曲线动效
+
+![image](https://github.com/GJson/AndroidTools/blob/master/gif/five.gif)   
 
 
 
