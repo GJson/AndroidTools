@@ -25,7 +25,6 @@ public class CouponActivity extends BaseActivity implements AdapterView.OnItemCl
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(getLayoutId());
         super.onCreate(savedInstanceState);
 
     }

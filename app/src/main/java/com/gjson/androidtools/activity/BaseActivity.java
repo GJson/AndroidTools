@@ -17,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        setContentView(getLayoutId());
         setupView();
         initializedData();
 

@@ -14,12 +14,20 @@
         android:orientation="vertical" />
 
     <Button
-        android:background="@android:color/holo_orange_light"
-        android:layout_gravity="center_vertical"
         android:id="@+id/rxretro_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/holo_orange_light"
         android:text="@string/rxjava_retrofit" />
+
+    <Button
+        android:id="@+id/bezier_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/holo_blue_light"
+        android:text="Bezier-贝塞尔曲线动效" />
 
     <com.gjson.androidtools.commonview.rainview.RainView
         android:layout_width="fill_parent"
