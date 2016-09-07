@@ -12,7 +12,7 @@ Pay attention to progress
 
 * 使用三阶贝塞尔曲线模拟运动路径。一个模拟贝塞尔曲线的网站，可以在线模拟出想要的曲线 http://myst729.github.io/bezier-curve/
 
- 
+* 开发过程中常用的工具类 AppUtil  DensityUtil EncodeUtil ScreenUtil StringUtil EncryptUtil
 
 
 
