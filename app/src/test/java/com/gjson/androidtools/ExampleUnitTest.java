@@ -1,4 +1,6 @@
-package com.gjson.autoscrollview;
+package com.gjson.androidtools;
+
+import com.gjson.androidtools.utils.EncodeUtil;
 
 import org.junit.Test;
 
@@ -11,5 +13,10 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void testGetMd5(){
+        EncodeUtil.urlDecode("httpllkll:kfjkfjlsf");
     }
 }
