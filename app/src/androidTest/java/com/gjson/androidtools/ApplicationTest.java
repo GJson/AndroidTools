@@ -1,4 +1,4 @@
-package com.gjson.autoscrollview;
+package com.gjson.androidtools;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
