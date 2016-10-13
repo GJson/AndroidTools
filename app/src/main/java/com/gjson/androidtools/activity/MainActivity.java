@@ -1,5 +1,6 @@
 package com.gjson.androidtools.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -19,7 +20,7 @@ public class MainActivity extends BaseActivity {
 
     private VerticalAutoScrollView mAutoScrollView;
     private Button mRxRetrofitBtn;
-    private Button mBezierBtn;
+    private Button mBezierBtn, mCheckPermisBtn;
 
 
     // 退出时间
@@ -42,7 +43,8 @@ public class MainActivity extends BaseActivity {
 
         mAutoScrollView = getView(R.id.top_autoscrllo);
         mRxRetrofitBtn = getView(R.id.rxretro_btn);
-        mBezierBtn=getView(R.id.bezier_btn);
+        mBezierBtn = getView(R.id.bezier_btn);
+        mCheckPermisBtn = getView(R.id.check_permission_btn);
     }
 
     @Override
@@ -66,6 +68,19 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(mContext, BezierActivity.class));
+
+            }
+        });
+
+        mCheckPermisBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkPermission(new CheckPermListener() {
+                    @Override
+                    public void superPermission() {
+                        ToastManager.showToast(mContext, "相机可用", ToastManager.TOAST_FLAG_SUCCESS);
+                    }
+                }, R.string.camera, Manifest.permission.CAMERA);
 
             }
         });

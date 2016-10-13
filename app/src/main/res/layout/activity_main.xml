@@ -28,6 +28,13 @@
         android:layout_gravity="center_vertical"
         android:background="@android:color/holo_blue_light"
         android:text="Bezier-贝塞尔曲线动效" />
+    <Button
+        android:id="@+id/check_permission_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/holo_green_light"
+        android:text="相机-动态获取权限" />
 
     <com.gjson.androidtools.commonview.rainview.RainView
         android:layout_width="fill_parent"
@@ -43,4 +50,6 @@
         android:layout_height="match_parent"
         android:background="@mipmap/just_experience_one"
         android:visibility="gone" />
+
+
 </LinearLayout>

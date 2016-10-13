@@ -2,15 +2,16 @@ package com.gjson.androidtools.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.gjson.androidtools.autocheckpermisson.PermissionActivity;
 
 /**
  * Created by gjson on 16/7/26.
  * Name BaseActivity
  * Version 1.0
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends PermissionActivity {
     protected Context mContext;
 
     @Override
