@@ -2,7 +2,7 @@
 this is android tools for view  autoscroll view and coupon view ；for  RXJava Retrofit MVP etc;
 Pay attention to progress 
 
-* 一句代码搞定 Android M 动态权限检测；
+* 轻松搞定 Android M 动态权限检测；
 
 * 上下自动滚动，实例如京东、淘宝、一号店等 Android app里的上下滚动动态；
 
