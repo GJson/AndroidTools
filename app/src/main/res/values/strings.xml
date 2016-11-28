@@ -9,4 +9,9 @@
     <string name="cancel">取消</string>
 
     <string name="camera">请给予相机权限，才能正常使用扫一扫</string>
+
+
+    //alibaichuan hotfix
+    <string name="alibaichuan_hotfix_rsa">your rsa</string>
+    <string name="alibaichuan_hotfix_secret">your secret</string>
 </resources>

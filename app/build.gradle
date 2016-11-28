@@ -1,23 +1,63 @@
+def sitNo = System.getProperty("sit") ? "_sit" + System.getProperty("sit") : ""
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+configurations {
+    apt
+}
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
     defaultConfig {
         applicationId "com.gjson.androidtools"
         minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.1.0"
+
+//        ndk {
+//            moduleName "app"
+//            ldLibs "log", "z", "m"
+//            abiFilters "armeabi"
+//        }
     }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                def apkFile = new File(output.outputFile.getParent() + "/${variant.flavorName}", "AndroidTools_v${variant.versionName}${sitNo}.apk")
+                output.outputFile = apkFile
+            }
+        }
+    }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,4 +68,28 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //alibaichuan hotfix
+    compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
+    compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        resourcePackageName "com.gjson.androidtools"
+    }
+}
+
+build << {
+    println 'start delete file'
+    File srcDir = file('build/outputs/apk')
+    FileCollection collection = files { srcDir.listFiles() }
+    collection.collect { file(it) }.sort().each {
+        println it.getPath()
+        if (!it.isDirectory()) {
+            println it.getPath()
+            it.delete()
+        }
+    }
 }
