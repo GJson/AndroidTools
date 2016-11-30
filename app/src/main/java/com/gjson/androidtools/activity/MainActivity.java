@@ -79,9 +79,8 @@ public class MainActivity extends BaseActivity {
         mCheckPermisBtn.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View v) {
-
-
                                                    if (!isMiuiFloatWindowOpAllowed(mContext)) {
+//                                                       Settings.ACTION_MANAGE_OVERLAY_PERMISSION
                                                        Intent intent1 = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                                                        Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
                                                        intent1.setData(uri);
