@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">AndroidTools</string>
     <string name="rxjava_retrofit">RXJavaRetrofit</string>
+    <string name="setting">设置</string>
+    <string name="perm_tip">
+        当前应用缺少必要权限。\n请点击"设置"-"权限"-打开所需权限。\n最后点击两次后退按钮，即可返回。
+    </string>
+    <string name="ask_again">请给予应用必要权限，让程序可正常工作。</string>
+    <string name="cancel">取消</string>
+
+    <string name="camera">请给予相机权限，才能正常使用扫一扫</string>
+
+
+    //alibaichuan hotfix
+    <string name="alibaichuan_hotfix_rsa">your rsa</string>
+    <string name="alibaichuan_hotfix_secret">your secret</string>
 </resources>
