@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
     // 退出时间
     private long exitTime = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,5 +124,7 @@ public class MainActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 
 }
