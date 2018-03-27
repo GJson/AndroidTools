@@ -1,8 +1,7 @@
 package com.gjson.androidtools;
 
-import android.app.Application;
-
 import com.gjson.androidtools.utils.Constant;
+import com.qihoo360.replugin.RePluginApplication;
 import com.taobao.hotfix.HotFixManager;
 import com.taobao.hotfix.PatchLoadStatusListener;
 import com.taobao.hotfix.util.PatchStatusCode;
@@ -12,7 +11,7 @@ import com.taobao.hotfix.util.PatchStatusCode;
  * Name MyApplication
  * Version 1.0
  */
-public class MyApplication extends Application {
+public class MyApplication extends RePluginApplication {
 
     @Override
     public void onCreate() {

@@ -1,6 +1,7 @@
 def sitNo = System.getProperty("sit") ? "_sit" + System.getProperty("sit") : ""
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'replugin-host-gradle'
 
 configurations {
     apt
@@ -72,6 +73,15 @@ dependencies {
     //alibaichuan hotfix
     compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
     compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
+
+    //luban
+    compile 'top.zibin:Luban:1.0.9'
+
+    compile 'org.jsoup:jsoup:1.9.2'
+
+
+    compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
+
 }
 
 apt {

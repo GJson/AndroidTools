@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
     // 退出时间
     private long exitTime = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +87,7 @@ public class MainActivity extends BaseActivity {
                                                        intent1.setData(uri);
                                                        startActivity(intent1);
                                                    }
+//                                                   startActivity(new Intent(mContext, ImageMakeActivity.class));
                                                }
                                            }
         );
@@ -122,5 +124,7 @@ public class MainActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 
 }
