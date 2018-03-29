@@ -16,6 +16,8 @@ Pay attention to progress
 
 * 开发过程中常用的工具类 AppUtil  DensityUtil EncodeUtil ScreenUtil StringUtil EncryptUtil
 
+* 无限重复、自动滚动的ImageView；
+
 
 
 #  效果图
