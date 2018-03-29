@@ -47,7 +47,14 @@
       android:layout_height="50dp"
       android:layout_gravity="bottom"
       rain:speed="3dp"
-      rain:src="@mipmap/bg_srcolling_image" />
+      rain:src="@array/ddt_imgs" />
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal|bottom"
+      android:layout_marginLeft="20dp"
+      android:src="@mipmap/house2" />
 
   </FrameLayout>
 
