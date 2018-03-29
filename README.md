@@ -20,6 +20,7 @@ Pay attention to progress
 
 #  效果图
 
+![image](https://github.com/GJson/AndroidTools/blob/master/gif/main.gif)    
 
 * 上下自动滚动，实例如京东、淘宝、一号店等 Android app里的上下滚动动态；
 
