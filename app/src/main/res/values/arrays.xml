@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+  <array name="ddt_imgs">
+    <item>@mipmap/bg1</item>
+    <item>@mipmap/bg2</item>
+    <item>@mipmap/bg3</item>
+    <item>@mipmap/bg4</item>
+  </array>
+  <integer-array name="randomne">
+    <item>1</item>
+    <item>1</item>
+    <item>1</item>
+    <item>1</item>
+  </integer-array>
+</resources>

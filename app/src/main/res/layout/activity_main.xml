@@ -1,55 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:rain="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:rain="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.gjson.androidtools.activity.MainActivity">
+
+  <com.gjson.androidtools.commonview.VerticalAutoScrollView
+    android:id="@+id/top_autoscrllo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.gjson.androidtools.activity.MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical" />
 
-    <com.gjson.androidtools.commonview.VerticalAutoScrollView
-        android:id="@+id/top_autoscrllo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
+  <Button
+    android:id="@+id/rxretro_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_orange_light"
+    android:text="@string/rxjava_retrofit" />
 
-    <Button
-        android:id="@+id/rxretro_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@android:color/holo_orange_light"
-        android:text="@string/rxjava_retrofit" />
+  <Button
+    android:id="@+id/bezier_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_blue_light"
+    android:text="Bezier-贝塞尔曲线动效" />
 
-    <Button
-        android:id="@+id/bezier_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@android:color/holo_blue_light"
-        android:text="Bezier-贝塞尔曲线动效" />
-    <Button
-        android:id="@+id/check_permission_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@android:color/holo_green_light"
-        android:text="相机-动态获取权限" />
+  <Button
+    android:id="@+id/check_permission_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_green_light"
+    android:text="相机-动态获取权限" />
 
-    <com.gjson.androidtools.commonview.rainview.RainView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="#ff000000"
-        rain:rainNum="300"
-        rain:randColor="true"
-        rain:size="10" />
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp">
 
+    <com.gjson.androidtools.commonview.autoscrollimageview.AutoscrollImageView
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_gravity="bottom"
+      rain:speed="3dp"
+      rain:src="@array/ddt_imgs" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/just_experience_one"
-        android:visibility="gone" />
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal|bottom"
+      android:layout_marginLeft="20dp"
+      android:src="@mipmap/house2" />
+
+  </FrameLayout>
+
+  <com.gjson.androidtools.commonview.rainview.RainView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000"
+    rain:rainNum="300"
+    rain:randColor="true"
+    rain:size="10" />
+
+
+  <ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/just_experience_one"
+    android:visibility="gone" />
 
 
 </LinearLayout>
