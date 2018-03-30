@@ -17,4 +17,9 @@
             <enum name="stopped" value="1" />
         </attr>
     </declare-styleable>
+
+
+    <declare-styleable name="XYTranlateImageView">
+        <attr name="direction" format="string"/>
+    </declare-styleable>
 </resources>

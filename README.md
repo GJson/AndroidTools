@@ -16,10 +16,13 @@ Pay attention to progress
 
 * 开发过程中常用的工具类 AppUtil  DensityUtil EncodeUtil ScreenUtil StringUtil EncryptUtil
 
+* 无限重复、自动滚动的ImageView；
+
 
 
 #  效果图
 
+![image](https://github.com/GJson/AndroidTools/blob/master/gif/main.gif)    
 
 * 上下自动滚动，实例如京东、淘宝、一号店等 Android app里的上下滚动动态；
 
