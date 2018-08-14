@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
 
     private VerticalAutoScrollView mAutoScrollView;
     private Button mRxRetrofitBtn;
-    private Button mBezierBtn, mCheckPermisBtn;
+    private Button mBezierBtn, mCheckPermisBtn,mLubanBtn;
 
     private Activity activity = this;
 
@@ -50,6 +50,7 @@ public class MainActivity extends BaseActivity {
         mRxRetrofitBtn = getView(R.id.rxretro_btn);
         mBezierBtn = getView(R.id.bezier_btn);
         mCheckPermisBtn = getView(R.id.check_permission_btn);
+        mLubanBtn=getView(R.id.luban_btn);
     }
 
     @Override
@@ -91,6 +92,13 @@ public class MainActivity extends BaseActivity {
                                                }
                                            }
         );
+
+        mLubanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+
+                startActivity(new Intent(mContext, ImageMakeActivity.class));
+            }
+        });
 
     }
 

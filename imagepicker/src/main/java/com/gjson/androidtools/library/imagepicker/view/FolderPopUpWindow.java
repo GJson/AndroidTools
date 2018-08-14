@@ -14,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import com.lianjia.android.lib.imagepicker.R;
+import com.gjson.androidtools.library.R;
 
 /**
  Created by gjson on 2018/6/22.

@@ -23,7 +23,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
-import com.lianjia.android.lib.imagepicker.R;
+import com.gjson.androidtools.library.R;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;

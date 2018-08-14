@@ -37,6 +37,14 @@
     android:background="@android:color/holo_green_light"
     android:text="相机-动态获取权限" />
 
+  <Button
+    android:id="@+id/luban_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_green_light"
+    android:text="luban压缩" />
+
   <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
