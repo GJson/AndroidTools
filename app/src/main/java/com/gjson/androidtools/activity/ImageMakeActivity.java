@@ -64,6 +64,7 @@ public class ImageMakeActivity extends BaseActivity {
 
     }
 
+
     @Override
     protected void initializedData() {
         mTakePicBtn.setOnClickListener(new View.OnClickListener() {

@@ -77,6 +77,8 @@ dependencies {
     compile 'org.jsoup:jsoup:1.9.2'
     compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
     compile project(':imagepicker')
+
+    compile 'com.github.bumptech.glide:glide:3.8.0'
 }
 
 apt {
