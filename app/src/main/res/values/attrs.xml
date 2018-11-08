@@ -22,4 +22,15 @@
     <declare-styleable name="XYTranlateImageView">
         <attr name="direction" format="string"/>
     </declare-styleable>
+
+
+    <declare-styleable name="AutoScrollBanner">
+        <attr name="points_visibility" format="boolean"/>
+        <attr name="points_position" format="enum">
+            <enum name="CENTER" value="0"/>
+            <enum name="LEFT" value="1"/>
+            <enum name="RIGHT" value="2"/>
+        </attr>
+        <attr name="points_container_background" format="reference|color"/>
+    </declare-styleable>
 </resources>
