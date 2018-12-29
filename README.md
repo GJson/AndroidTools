@@ -18,6 +18,8 @@ Pay attention to progress
 
 * 无限重复、自动滚动的ImageView；
 
+* 加载中的样式 LoadingView；支持circular progressbar
+
 
 
 #  效果图
@@ -59,6 +61,11 @@ Pay attention to progress
 * 三阶贝塞尔曲线动效
 
 ![image](https://github.com/GJson/AndroidTools/blob/master/gif/five.gif)   
+
+
+* 加载中的样式的 LoadingView
+
+![image](https://github.com/GJson/AndroidTools/blob/master/gif/loadingview.gif)   
 
 
 
