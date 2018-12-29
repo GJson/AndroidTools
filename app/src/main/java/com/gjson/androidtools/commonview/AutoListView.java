@@ -5,11 +5,8 @@ import android.util.AttributeSet;
 import android.widget.ListView;
 
 /**
- * Created by gjson on 16/8/3.
+ * Created by gjson on 2018/11/18.
  * Name AutoListView
- *
- * ScrollView中嵌套ListView，重写ListView计算高度
- *
  * Version 1.0
  */
 public class AutoListView extends ListView{

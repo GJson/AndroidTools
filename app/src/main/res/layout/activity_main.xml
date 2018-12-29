@@ -38,6 +38,14 @@
     android:text="相机-动态获取权限" />
 
   <Button
+    android:id="@+id/loadingview_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_blue_light"
+    android:text="LoadingSampleActivity" />
+
+  <Button
     android:id="@+id/luban_btn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
