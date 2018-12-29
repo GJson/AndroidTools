@@ -93,6 +93,12 @@ public class MainActivity extends BaseActivity {
       }
     });
 
+    findViewById(R.id.loadingview_btn).setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+
+        startActivity(new Intent(mContext, LoadingSampleActivity.class));
+      }
+    });
     initLocalBanner();
   }
 
@@ -156,7 +162,7 @@ public class MainActivity extends BaseActivity {
    */
   private void initNetBanner() {
 
-    String [] dff={};
+    String[] dff = {};
     List<String> imgesUrl = new ArrayList<>();
     for (int i = 0; i < dff.length; i++) {
       imgesUrl.add(dff[i]);

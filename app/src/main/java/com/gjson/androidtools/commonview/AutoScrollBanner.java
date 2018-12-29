@@ -25,8 +25,9 @@ import java.util.List;
 
 
 /**
- * @Author Created by gjson (zhuangyalei@lianjia.com) on 2018/11/8.
- * @Copyright (c) 2018, Lianjia Group All Rights Reserved.
+ * Created by gjson on 2018/11/18.
+ * Name AutoScrollBanner
+ * Version 1.0
  */
 public class AutoScrollBanner extends RelativeLayout {
 
