@@ -9,7 +9,7 @@ import com.gjson.androidtools.commonview.loadingview.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/16.
+ * Created by GJSON on 2015/10/16.
  */
 public class PacmanIndicator extends Indicator {
 
