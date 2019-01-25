@@ -4,100 +4,123 @@ apply plugin: 'android-apt'
 apply plugin: 'replugin-host-gradle'
 
 configurations {
-    apt
+  apt
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
 
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
+  packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/ASL2.0'
+  }
+  packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+  }
+
+  defaultConfig {
+    applicationId "com.gjson.androidtools"
+    minSdkVersion 11
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.1.0"
+
+    //        ndk {
+    //            moduleName "app"
+    //            ldLibs "log", "z", "m"
+    //            abiFilters "armeabi"
+    //        }
+  }
+
+
+  dexOptions {
+    javaMaxHeapSize "4g" //specify the heap size for the dex process
+    preDexLibraries = false //delete the already predexed libraries
+  }
+
+  sourceSets {
+    main {
+      jniLibs.srcDirs = ['jniLibs']
     }
-    defaultConfig {
-        applicationId "com.gjson.androidtools"
-        minSdkVersion 11
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.1.0"
+  }
 
-//        ndk {
-//            moduleName "app"
-//            ldLibs "log", "z", "m"
-//            abiFilters "armeabi"
-//        }
+  signingConfigs {
+    myConfig {
+      storeFile file(STORE_FILE_PATH)
+      storePassword STORE_PASSWORD
+      keyAlias KEY_ALIAS
+      keyPassword KEY_PASSWORD
     }
+  }
 
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['jniLibs']
-        }
+  buildTypes {
+    release {
+      signingConfig signingConfigs.myConfig
+      shrinkResources true
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+  applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+      if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+        def apkFile = new File(output.outputFile.getParent() + "/${variant.flavorName}",
+            "AndroidTools_v${variant.versionName}${sitNo}.apk")
+        output.outputFile = apkFile
+      }
     }
-
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                def apkFile = new File(output.outputFile.getParent() + "/${variant.flavorName}", "AndroidTools_v${variant.versionName}${sitNo}.apk")
-                output.outputFile = apkFile
-            }
-        }
-    }
+  }
 }
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    //alibaichuan hotfix
-    compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
-    compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
-    //luban
-    compile 'top.zibin:Luban:1.0.9'
-    compile 'org.jsoup:jsoup:1.9.2'
-    compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
-    compile project(':imagepicker')
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:recyclerview-v7:23.4.0'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'com.squareup.retrofit2:retrofit:2.1.0'
+  compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+  compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+  //alibaichuan hotfix
+  compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
+  compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
+  //luban
+  compile 'top.zibin:Luban:1.0.9'
+  compile 'org.jsoup:jsoup:1.9.2'
+  compile 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+  compile project(':imagepicker')
 
-    compile 'com.github.bumptech.glide:glide:3.8.0'
+  compile 'com.github.bumptech.glide:glide:3.8.0'
 }
 
 apt {
-    arguments {
-        androidManifestFile variant.outputs[0].processResources.manifestFile
-        resourcePackageName "com.gjson.androidtools"
-    }
+  arguments {
+    androidManifestFile variant.outputs[0].processResources.manifestFile
+    resourcePackageName "com.gjson.androidtools"
+  }
 }
 
 build << {
-    println 'start delete file'
-    File srcDir = file('build/outputs/apk')
-    FileCollection collection = files { srcDir.listFiles() }
-    collection.collect { file(it) }.sort().each {
-        println it.getPath()
-        if (!it.isDirectory()) {
-            println it.getPath()
-            it.delete()
-        }
+  println 'start delete file'
+  File srcDir = file('build/outputs/apk')
+  FileCollection collection = files { srcDir.listFiles() }
+  collection.collect { file(it) }.sort().each {
+    println it.getPath()
+    if (!it.isDirectory()) {
+      println it.getPath()
+      it.delete()
     }
+  }
 }
