@@ -63,7 +63,7 @@ class InjectTransform extends Transform {
         input.directoryInputs.each {
           DirectoryInput directoryInput ->
             // 注入代码
-            MyInjectByJavassit.injectToast(directoryInput.file.absolutePath, mProject)
+            InjectByJavassit.injectToast(directoryInput.file.absolutePath, mProject)
 
             // 获取输出目录
             def dest = outputProvider.getContentLocation(directoryInput.name,

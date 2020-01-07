@@ -1,6 +1,8 @@
 # AndroidTools
 this is android tools for view  autoscroll view and coupon view ；for  RXJava Retrofit MVP etc;
-Pay attention to progress 
+Pay attention to progress Android Plugin Transform API Dev
+
+* Gradle Plugin Transform API 实战
 
 * 轻松搞定 Android M 动态权限检测；
 

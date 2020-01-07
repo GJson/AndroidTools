@@ -35,7 +35,7 @@ class InjectByJavassit {
         if (file.name == 'MainActivity.class') {
           // 获取Class
           // 这里的MainActivity就在app模块里
-          CtClass ctClass = sClassPool.getCtClass('com.zjx.happy.learning.MainActivity')
+          CtClass ctClass = sClassPool.getCtClass('com.gjson.androidtools.activity.MainActivity')
           println("ctClass: $ctClass")
 
           // 解冻
