@@ -1,103 +1,105 @@
 def sitNo = System.getProperty("sit") ? "_sit" + System.getProperty("sit") : ""
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
-apply plugin: 'replugin-host-gradle'
-
-configurations {
-    apt
-}
+//apply plugin: 'annotationProcessor'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+  compileSdkVersion 28
+  buildToolsVersion "28.0.3"
 
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
+  packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/ASL2.0'
+  }
+  defaultConfig {
+    applicationId "com.gjson.androidtools"
+    minSdkVersion 14
+    targetSdkVersion 27
+    versionCode 1
+    versionName "1.1.0"
+
+    //        ndk {
+    //            moduleName "app"
+    //            ldLibs "log", "z", "m"
+    //            abiFilters "armeabi"
+    //        }
+
+    vectorDrawables.useSupportLibrary = true
+  }
+
+  sourceSets {
+    main {
+      jniLibs.srcDirs = ['jniLibs']
+      //      jni.srcDirs = ['src/main/jni']
     }
-    defaultConfig {
-        applicationId "com.gjson.androidtools"
-        minSdkVersion 11
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.1.0"
+  }
 
-//        ndk {
-//            moduleName "app"
-//            ldLibs "log", "z", "m"
-//            abiFilters "armeabi"
-//        }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
 
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['jniLibs']
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                def apkFile = new File(output.outputFile.getParent() + "/${variant.flavorName}", "AndroidTools_v${variant.versionName}${sitNo}.apk")
-                output.outputFile = apkFile
-            }
-        }
-    }
+  android.applicationVariants.all {
+    variant ->
+      variant.outputs.all {
+        //_${releaseTime()}
+        outputFileName = "AndroidTools_v${variant.versionName}${sitNo}.apk"
+      }
+  }
 }
-
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    //alibaichuan hotfix
-    compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
-    compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
-    //luban
-    compile 'top.zibin:Luban:1.0.9'
-    compile 'org.jsoup:jsoup:1.9.2'
-    compile 'com.qihoo360.replugin:replugin-host-lib:2.1.1'
-    compile project(':imagepicker')
 
-    compile 'com.github.bumptech.glide:glide:3.8.0'
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  testImplementation 'junit:junit:4.12'
+  implementation 'com.android.support:recyclerview-v7:28.0.0'
+  implementation 'com.android.support:appcompat-v7:28.0.0'
+  implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+  implementation 'com.squareup.retrofit2:converter-jackson:2.1.0'
+  implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+  implementation 'io.reactivex:rxandroid:1.2.1'
+  implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+  //alibaichuan hotfix
+  implementation 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.3.3'
+  implementation 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
+
+  //luban
+  implementation 'top.zibin:Luban:1.0.9'
+  implementation 'org.jsoup:jsoup:1.9.2'
+
+  //  implementation 'com.qihoo360.replugin:replugin-host-lib:2.3.3'
+  implementation project(':imagepicker')
+
+  //  implementation 'com.github.bumptech.glide:glide:3.8.0'
+  implementation 'com.github.bumptech.glide:glide:4.7.1'
+  annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 }
 
-apt {
-    arguments {
-        androidManifestFile variant.outputs[0].processResources.manifestFile
-        resourcePackageName "com.gjson.androidtools"
-    }
-}
+
+//apt {
+//  arguments {
+//    androidManifestFile variant.outputs[0].processResources.manifestFile
+//    resourcePackageName "com.gjson.androidtools"
+//  }
+//}
 
 build << {
-    println 'start delete file'
-    File srcDir = file('build/outputs/apk')
-    FileCollection collection = files { srcDir.listFiles() }
-    collection.collect { file(it) }.sort().each {
-        println it.getPath()
-        if (!it.isDirectory()) {
-            println it.getPath()
-            it.delete()
-        }
+  println 'start delete file'
+  File srcDir = file('build/outputs/apk')
+  FileCollection collection = files { srcDir.listFiles() }
+  collection.collect { file(it) }.sort().each {
+    println it.getPath()
+    if (!it.isDirectory()) {
+      println it.getPath()
+      it.delete()
     }
+  }
 }

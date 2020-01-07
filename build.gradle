@@ -1,37 +1,35 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    repositories {
-        jcenter()
-      maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-      }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
-        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.1.2'
+  repositories {
+    jcenter()
+    mavenCentral()
+    google()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.1.2'
+    //    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
 }
 
 allprojects {
-    repositories {
-        jcenter()
+  repositories {
+    jcenter()
 
-        maven {
-            url "http://repo.baichuan-android.taobao.com/content/groups/public/"
-        }
-      maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-      }
+    maven {
+      url "http://repo.baichuan-android.taobao.com/content/groups/public/"
     }
+    google()
+
+    mavenCentral()
+
+    maven { url "https://jitpack.io" }
+  }
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }

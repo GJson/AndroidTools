@@ -5,12 +5,14 @@ import android.support.v4.view.PagerAdapter;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import com.github.chrisbanes.photoview.OnPhotoTapListener;
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
 import com.gjson.androidtools.library.imagepicker.ImagePicker;
 import com.gjson.androidtools.library.imagepicker.bean.ImageItem;
 import com.gjson.androidtools.library.imagepicker.util.Utils;
 import java.util.ArrayList;
-import uk.co.senab.photoview.PhotoView;
-import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
  * Created by gjson on 2018/6/22.
@@ -48,10 +50,11 @@ public class ImagePageAdapter extends PagerAdapter {
   public Object instantiateItem(ViewGroup container, int position) {
     PhotoView photoView = new PhotoView(mActivity);
     ImageItem imageItem = images.get(position);
-    imagePicker.getImageLoader().displayImagePreview(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
-    photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
+    imagePicker.getImageLoader()
+        .displayImagePreview(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
+    photoView.setOnPhotoTapListener(new OnPhotoTapListener() {
       @Override
-      public void onPhotoTap(View view, float x, float y) {
+      public void onPhotoTap(ImageView view, float x, float y) {
         if (listener != null) listener.OnPhotoTapListener(view, x, y);
       }
     });
