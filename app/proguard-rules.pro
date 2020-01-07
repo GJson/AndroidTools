@@ -16,6 +16,7 @@
 #   public *;
 #}
 
+<<<<<<< HEAD
 # Square的放一起
 ##---------------Begin: proguard configuration for Retrofit & RxJava & OkHttp3 & Picasso ----------
 -dontwarn javax.annotation.**
@@ -83,3 +84,16 @@
 
 -dontwarn net.fortuna.ical4j.model.CalendarFactory
 -keep class com.gjson.androidtools.commonview.loadingview.** { *; }
+=======
+-keep com.gjson.androidtools.commonview.loadingview.** { *; }
+
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+>>>>>>> development
