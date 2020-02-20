@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+
+    <style>
+     body{
+       margin:30px;
+       padding:20%;
+     }
+     button{
+       font-size: 18px;
+       background: #ccc;
+       height: 40px;
+       line-height: 40px;
+       color:#fff;
+     }
+
+
+
+    </style>
+</head>
+<body>
+<a href="http://wxpay.wxutil.com/mch/pay/h5.v2.php">wechat pay</a>
+<br/>
+<a href="alipays://pay">alipay</a>
+<br/>
+<a href="zhidao://zhidaovip.com/course/detail?courseId=59">课程详情页</a>
+<br/>
+<a href="zhidao://zhidaovip.com/home/index?tabIndex=1">课程列表页</a>
+<br/>
+<a href="zhidao://zhidaovip.com/web/index?openUrl=http://www.ifeng.com">网页调试</a>
+
+<br/>
+<button onclick="goPage()">万能跳转至原生页面</button>
+
+<script>
+      function goPage(){
+        window.HybridBridgeLJ.universalToNative("zhidao://zhidaovip.com/course/detail?courseId=59");
+      }
+
+</script>
+</body>
+</html>

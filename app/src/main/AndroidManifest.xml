@@ -128,6 +128,9 @@
     </activity>
     <activity android:name=".activity.ImageMakeActivity"></activity>
     <activity android:name=".activity.LoadingSampleActivity" />
+
+    <activity android:name=".activity.LottieActivity" />
+
   </application>
 
 </manifest>

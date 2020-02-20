@@ -53,6 +53,14 @@
     android:background="@android:color/holo_green_light"
     android:text="luban压缩" />
 
+  <Button
+    android:id="@+id/lottie_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/holo_blue_light"
+    android:text="lottie" />
+
   <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
