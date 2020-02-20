@@ -34,16 +34,19 @@ public class MainActivity extends BaseActivity {
   // 退出时间
   private long exitTime = 0;
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ToastManager.showToast(mContext, GjsonJni.sayHello(), ToastManager.TOAST_FLAG_SUCCESS);
   }
 
-  @Override protected int getLayoutId() {
+  @Override
+  protected int getLayoutId() {
     return R.layout.activity_main;
   }
 
-  @Override protected void setupView() {
+  @Override
+  protected void setupView() {
 
     mAutoScrollView = getView(R.id.top_autoscrllo);
     mRxRetrofitBtn = getView(R.id.rxretro_btn);
@@ -53,28 +56,33 @@ public class MainActivity extends BaseActivity {
     mAutoScrollBanner = (AutoScrollBanner) getView(R.id.autoscroll_banner);
   }
 
-  @Override protected void initializedData() {
+  @Override
+  protected void initializedData() {
     mAutoScrollView.setData(getData());
     mAutoScrollView.setClickListener(new VerticalAutoScrollView.OnItemClickListener<AdInfo>() {
-      @Override public void onItemClick(View v, AdInfo adInfo) {
+      @Override
+      public void onItemClick(View v, AdInfo adInfo) {
 
         startActivity(new Intent(mContext, CouponActivity.class));
       }
     });
     mRxRetrofitBtn.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
+      @Override
+      public void onClick(View v) {
         startActivity(new Intent(mContext, WeatherActivity.class));
       }
     });
 
     mBezierBtn.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
+      @Override
+      public void onClick(View v) {
         startActivity(new Intent(mContext, BezierActivity.class));
       }
     });
 
     mCheckPermisBtn.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
+      @Override
+      public void onClick(View v) {
         if (!isMiuiFloatWindowOpAllowed(mContext)) {
           //                                                       Settings.ACTION_MANAGE_OVERLAY_PERMISSION
           Intent intent1 = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
@@ -87,16 +95,26 @@ public class MainActivity extends BaseActivity {
     });
 
     mLubanBtn.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
+      @Override
+      public void onClick(View v) {
 
         startActivity(new Intent(mContext, ImageMakeActivity.class));
       }
     });
 
     findViewById(R.id.loadingview_btn).setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
+      @Override
+      public void onClick(View v) {
 
         startActivity(new Intent(mContext, LoadingSampleActivity.class));
+      }
+    });
+
+    findViewById(R.id.lottie_btn).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+        startActivity(new Intent(mContext, LottieActivity.class));
       }
     });
     initLocalBanner();
@@ -118,7 +136,8 @@ public class MainActivity extends BaseActivity {
     return datas;
   }
 
-  @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
     if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
       if ((System.currentTimeMillis() - exitTime) > 2000) {
         ToastManager.showToast(mContext, "再按一次退出程序", 1);
@@ -151,7 +170,8 @@ public class MainActivity extends BaseActivity {
 
     mAutoScrollBanner.setPointsIsVisible(true);
     mAutoScrollBanner.setOnItemClickListener(new AutoScrollBanner.OnItemClickListener() {
-      @Override public void onItemClick(int position) {
+      @Override
+      public void onItemClick(int position) {
         ToastManager.showToast(mContext, "点击了第" + position + "张图片", Toast.LENGTH_SHORT);
       }
     });
@@ -170,7 +190,8 @@ public class MainActivity extends BaseActivity {
     mAutoScrollBanner.setImagesUrl(imgesUrl);
 
     mAutoScrollBanner.setOnItemClickListener(new AutoScrollBanner.OnItemClickListener() {
-      @Override public void onItemClick(int position) {
+      @Override
+      public void onItemClick(int position) {
         ToastManager.showToast(mContext, "点击了第" + position + "张图片", Toast.LENGTH_SHORT);
       }
     });

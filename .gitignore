@@ -12,3 +12,9 @@
 .idea
 /.idea/vcs.xml
 /.gitignore
+/app/gradle.properties
+AndroidTools_v1.1.0.apk
+libs/
+src/main/assets/
+src/main/java/com/gjson/androidtools/Interface/
+src/main/java/com/qihoo360/
