@@ -1,0 +1,13 @@
+<script type="text/javascript" src="//b5rf.t4m.cn/sharesdk.js"></script>
+<script type="text/javascript">
+  ShareSDK([
+    {
+      params: {  //params字段是网页回环跳转到App时带给App的参数
+        // targetAction_iOS和targetAction_And:这两个示例字段，对应iOS的一个Controller的名字和安卓的一个Activity的名字，可以用作客户端场景恢复
+        targetAction_iOS: "MOBAboutMobLinkViewController",
+        targetAction_And: "cn.sharesdk.demo.ShareMobLinkActivity",
+        other: "other params",
+      }
+    }
+  ])
+</script>
